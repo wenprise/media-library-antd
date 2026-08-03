@@ -1,0 +1,71 @@
+{
+	"name": "@wenprise/media-library-antd",
+	"version": "0.1.0",
+	"description": "Reusable Ant Design media library, picker, and gallery fields",
+	"keywords": [
+		"react",
+		"antd",
+		"media-library",
+		"media-picker",
+		"gallery"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/wenprise/media-library-antd#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wenprise/media-library-antd.git"
+	},
+	"bugs": {
+		"url": "https://github.com/wenprise/media-library-antd/issues"
+	},
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./style.css": "./dist/style.css"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "vite build",
+		"typecheck": "tsc --noEmit",
+		"check": "pnpm typecheck && pnpm build && pnpm pack --dry-run",
+		"prepublishOnly": "pnpm check"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@11.17.0",
+	"peerDependencies": {
+		"@ant-design/icons": ">=6 <7",
+		"antd": ">=6 <7",
+		"react": ">=18 <20",
+		"react-dom": ">=18 <20"
+	},
+	"devDependencies": {
+		"@ant-design/icons": "6.3.2",
+		"@types/node": "^26.1.1",
+		"@types/react": "^19.2.17",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.5",
+		"antd": "6.5.1",
+		"less": "^4.8.1",
+		"react": "19.2.7",
+		"react-dom": "19.2.7",
+		"typescript": "^6.0.3",
+		"vite": "^8.2.0",
+		"vite-plugin-dts": "^5.0.3"
+	}
+}

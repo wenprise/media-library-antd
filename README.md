@@ -4,6 +4,14 @@ Reusable React and Ant Design components for browsing existing media, uploading 
 
 ## Installation
 
+Install the current public GitHub release:
+
+```bash
+pnpm add github:wenprise/media-library-antd#v0.1.0
+```
+
+After the package is published to npm, install it from the registry:
+
 ```bash
 pnpm add @wenprise/media-library-antd
 ```

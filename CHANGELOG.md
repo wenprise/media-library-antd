@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 - 2026-08-07
+
+- Normalize media card previews: the preview area always fills a square and
+  small images are stretched and cropped to match other cards.
+
 ## 0.1.1 - 2026-08-07
 
 - Allow dragging new files directly onto the media library list to upload, with auto-selection and list refresh.

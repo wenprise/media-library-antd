@@ -28,6 +28,8 @@
   width: 100%;
   padding: 0;
   border: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
   background: transparent;
   cursor: pointer;
 }
@@ -37,10 +39,18 @@
   outline-offset: -2px;
 }
 
+/* antd Image 的包裹层撑满按钮，避免小图按固有尺寸收缩导致四周留白。 */
+.media-grid__select-button :global(.ant-image) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .media-grid__preview-image,
 .media-grid__file-preview {
   display: grid;
   width: 100%;
+  height: 100%;
   aspect-ratio: 1;
   overflow: hidden;
   place-items: center;

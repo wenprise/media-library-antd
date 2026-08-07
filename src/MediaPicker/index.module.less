@@ -10,6 +10,42 @@
   gap: 12px;
 }
 
+.media-picker__drop-hint {
+  margin: -8px 0 0;
+  color: var(--ant-color-text-tertiary, #98a2b3);
+  font-size: 13px;
+}
+
+.media-picker__drop-zone {
+  position: relative;
+  min-height: 0;
+}
+
+.media-picker__drop-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px dashed var(--ant-color-primary, #2563eb);
+  border-radius: 10px;
+  color: var(--ant-color-primary, #2563eb);
+  background: rgb(37 99 235 / 8%);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.media-picker__library {
+	min-height: 0;
+	height: min(654px, calc(100vh - 320px));
+	overflow-y: auto;
+	padding-right: 4px;
+	scrollbar-gutter: stable;
+}
+
 .media-picker__upload-hint,
 .media-picker-field__empty,
 .media-attachment-field__empty {
@@ -23,7 +59,7 @@
 }
 
 .media-picker__selection-count {
-  margin-right: auto;
+  margin-right: 12px;
   color: var(--ant-color-text-secondary, #667085);
 }
 
@@ -48,6 +84,104 @@
 }
 
 .media-picker-field__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.media-picker-field__card {
+  width: min(100%, 180px);
+  overflow: hidden;
+  border: 1px solid var(--ant-color-border-secondary, #eaecf0);
+  border-radius: 10px;
+  background: var(--ant-color-bg-container, #fff);
+}
+
+.media-picker-field__card:hover,
+.media-picker-field__card:focus-visible {
+  border-color: var(--ant-color-primary, #2563eb);
+  box-shadow: 0 0 0 2px rgb(37 99 235 / 12%);
+  outline: none;
+}
+
+.media-picker-field__card-preview {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ant-color-fill-secondary, #f2f4f7);
+}
+
+/* antd Image 的包裹层不占位，让图片直接参与卡片的居中布局。 */
+.media-picker-field__card-preview :global(.ant-image) {
+  display: contents;
+}
+
+/* 图片按原始比例居中显示，尺寸过大时等比缩小到卡片内。 */
+.media-picker-field__card-preview :global(.ant-image-img) {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.media-picker-field__card .media-picker-field__card-edit {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  color: var(--ant-color-text, #344054);
+  background: var(--ant-color-bg-container, rgb(255 255 255 / 92%));
+  box-shadow: 0 1px 2px rgb(16 24 40 / 12%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.media-picker-field__card:hover .media-picker-field__card-edit,
+.media-picker-field__card-edit:focus-visible {
+  opacity: 1;
+}
+
+.media-picker-field__card-empty {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: var(--ant-color-text-secondary, #667085);
+  font-size: 13px;
+}
+
+.media-picker-field__card-failed {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  color: var(--ant-color-error-text, #f04438);
+  background: var(--ant-color-error-bg, #fee4e2);
+  font-size: 12px;
+}
+
+.media-picker-field__card-body {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+.media-picker-field__card-name {
+  display: block;
+  min-height: 22px;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.media-picker-field__card-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;

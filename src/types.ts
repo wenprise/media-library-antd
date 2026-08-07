@@ -12,6 +12,8 @@ export interface MediaRecord {
 	size?: number | null;
 	width?: number | null;
 	height?: number | null;
+	alt_text?: Record<string, string> | null;
+	description?: string | null;
 	created_at: string;
 	updated_at: string;
 }
@@ -56,4 +58,8 @@ export interface MediaLibraryClient {
 	list: (params: MediaListParams) => Promise<MediaListResponse>;
 	get: (media_id: number) => Promise<MediaRecordResponse>;
 	upload: (form_data: FormData) => Promise<MediaRecordResponse>;
+	update: (
+		media_id: number,
+		values: Record<string, unknown>,
+	) => Promise<MediaRecordResponse>;
 }

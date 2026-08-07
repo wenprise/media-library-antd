@@ -21,3 +21,8 @@ export type {
 	MediaRecord,
 	MediaRecordResponse,
 } from "./types";
+export {
+	default as MediaInfoEditModal,
+	type MediaInfoEditModalProps,
+	type MediaInfoEditValues,
+} from "./MediaInfoEditModal";

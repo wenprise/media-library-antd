@@ -17,8 +17,8 @@ export interface MediaPickerFieldProps {
     can_manage?: boolean;
     value?: number | null;
     onChange?: (value?: number) => void;
-    button_label?: string;
     allowed_kinds?: MediaKind[];
+    card_layout?: boolean;
 }
 /** 可被 Ant Design 表单控制的多媒体附件字段。 */
 export interface MediaAttachmentFieldProps {
@@ -40,7 +40,7 @@ export declare function MediaUploadDragger({ client, onUploaded, onBatchComplete
 /** 提供媒体库筛选、分页、选择和新文件上传。 */
 export default function MediaPicker({ client, open, mode, selected_ids, allowed_kinds, title, onCancel, onConfirm, }: MediaPickerProps): import("react").JSX.Element;
 /** 渲染适用于 Hero 和站点设置的单媒体选择字段。 */
-export declare function MediaPickerField({ client, can_manage, value, onChange, button_label, allowed_kinds, }: MediaPickerFieldProps): import("react").JSX.Element;
+export declare function MediaPickerField({ client, can_manage, value, onChange, allowed_kinds, card_layout, }: MediaPickerFieldProps): import("react").JSX.Element;
 /** 渲染支持多图选择和拖动排序的单一相册字段。 */
 export declare function MediaAttachmentField({ client, can_manage, value, onChange, }: MediaAttachmentFieldProps): import("react").JSX.Element;
 export {};

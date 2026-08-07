@@ -39,7 +39,7 @@ export const media_library_client: MediaLibraryClient = {
 ## Components
 
 - `MediaGrid`: responsive media previews and management actions.
-- `MediaPicker`: existing-media library and upload tabs with single or multiple selection.
+- `MediaPicker`: existing-media library and upload tabs with single or multiple selection; new files can also be dragged directly onto the library list to upload.
 - `MediaUploadDragger`: reusable multipart upload area.
 - `MediaPickerField`: controlled single-media form field.
 - `MediaAttachmentField`: controlled sortable image gallery; the first item is the cover.
